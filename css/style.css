@@ -157,6 +157,7 @@
         border-width: 0.1rem;
         border-style: solid;
         font-size: 1.6rem;
+        border-radius: 0.6rem;
         &.radius {
           border-radius: 6rem;
         }
@@ -261,6 +262,14 @@
       background-color: transparent;
     }
   }
+  @layer button-layout {
+    .btn-group1 {
+      display: grid;
+      grid-template-columns: minmax(11rem, 1fr) 4fr;
+      gap: 0.4rem;
+      width: 100%;
+    }
+  }
 }
 
 @layer badge {
@@ -348,6 +357,15 @@
     &.vb {
       align-items: flex-end;
     }
+    &.fix-bottom {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: var(--zindex, 10);
+      background: var(--white);
+      padding: 2rem 1.6rem 2.4rem;
+    }
   }
   .txt-center {
     text-align: center;
@@ -370,6 +388,15 @@
   .mt24 {
     margin-top: 2.4rem;
   }
+  .mt25 {
+    margin-top: 2.5rem;
+  }
+  .mt32 {
+    margin-top: 3.2rem;
+  }
+  .mt34 {
+    margin-top: 3.4rem;
+  }
   @layer spaceOther {
     .basic-space {
       --space: 1.6rem;
@@ -379,6 +406,11 @@
       &[class*="line"] {
         padding: 0;
         margin: 0 var(--space);
+      }
+      &[class*="table"] {
+        padding: 0;
+        margin: 0 var(--space);
+        width: calc(100% - var(--space) * 2);
       }
     }
   }
@@ -472,7 +504,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      & span {
+      > * {
         color: var(--gray4b);
         font-size: 1rem;
         line-height: 1rem;
@@ -665,6 +697,10 @@
         line-height: 1;
         font-weight: 700;
         letter-spacing: -0.05rem;
+        table & {
+          font-weight: 400;
+          color: var(--gray4b);
+        }
         + li {
           &::before {
             content: "";
@@ -675,6 +711,9 @@
         }
         &:last-child {
           color: var(--blue);
+          table & {
+            color: var(--gray4b);
+          }
         }
       }
     }
@@ -795,7 +834,7 @@
     }
   }
   @layer table {
-    table.type1 {
+    .table-type1 {
       & th,
       & td {
         padding: 0.6rem 0;
@@ -819,7 +858,8 @@
       }
     }
 
-    table.type2 {
+    .table-type2 {
+      border-bottom: 0.1rem solid var(--grayea);
       & th,
       & td {
         padding: 1.2rem 0;
@@ -833,8 +873,10 @@
         font-weight: 400;
         line-height: 100%;
         letter-spacing: -0.05rem;
+        text-align: left;
       }
       & td {
+        font-size: 1.4rem;
         color: var(--gray4b);
         line-height: 1.4rem;
       }
@@ -843,7 +885,7 @@
       }
     }
 
-    table.type3 {
+    .table-type3 {
       & thead {
         & th {
           height: 4.2rem;
@@ -997,11 +1039,23 @@
 }
 
 @layer typography {
+  .heading {
+    &.regular {
+      color: var(--gray21);
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 2.8rem;
+      letter-spacing: -0.1rem;
+    }
+  }
   .post-information {
     color: var(--gray21);
     font-size: 1.6rem;
     line-height: 100%;
     letter-spacing: -0.05rem;
+  }
+  .txt-blue {
+    color: var(--blue);
   }
 }
 @layer line {
