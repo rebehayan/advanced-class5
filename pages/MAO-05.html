@@ -123,12 +123,12 @@
     </footer>
     <script>
       // javascript Version
-      //   const fixEl = document.querySelector(".fix-bottom");
-      //   const body = document.body;
-
-      //   const fixElHeight = fixEl.offsetHeight;
-      //   console.log(fixElHeight);
-      //   body.style.paddingBottom = fixElHeight + "px";
+      const fixEl = document.querySelector(".fix-bottom");
+      const body = document.body;
+      if (fixEl) {
+        const fixElHeight = fixEl.offsetHeight;
+        body.style.paddingBottom = fixElHeight + "px";
+      }
 
       // jQuery Version
       //   const fixEl = $(".fix-bottom");

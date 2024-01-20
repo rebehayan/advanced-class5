@@ -717,6 +717,8 @@
         }
       }
     }
+    .txt-list1 {
+    }
   }
   @layer tel {
     .tel {
@@ -1056,6 +1058,8 @@
   }
   .txt-blue {
     color: var(--blue);
+  }
+  .txt-type1 {
   }
 }
 @layer line {
