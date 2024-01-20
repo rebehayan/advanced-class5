@@ -1006,8 +1006,13 @@
 
   .checkbox {
     + label {
-      display: flex;
+      display: inline-flex;
       align-items: center;
+      gap: 0.4rem;
+      color: var(--gray4b);
+      font-size: 1.2rem;
+      line-height: 100%;
+      letter-spacing: -0.05rem;
       &::before {
         content: "";
         width: 2.4rem;
@@ -1025,8 +1030,13 @@
   }
   .radio {
     + label {
-      display: flex;
+      display: inline-flex;
       align-items: center;
+      gap: 0.4rem;
+      color: var(--gray4b);
+      font-size: 1.2rem;
+      line-height: 100%;
+      letter-spacing: -0.05rem;
       &::before {
         content: "";
         width: 2.4rem;
